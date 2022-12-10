@@ -52,9 +52,12 @@ version: '3'
 ```
 
 ## Run
-To run the nestjs project, just run the following command.
+To run the nestjs project, first we need to run the following code.
+```sh
+docker-compose up -d
+```
+
+Finally we need to run the project
 ```sh
 npm run start
-or
-npm run start:dev
 ```
