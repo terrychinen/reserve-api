@@ -60,4 +60,6 @@ docker-compose up -d
 Finally we need to run the project
 ```sh
 npm run start
+or
+npm run start:dev
 ```
