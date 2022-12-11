@@ -12,11 +12,11 @@ npm install
 ## Libraries used
 - @nestjs/config
 - @nestjs/typeorm
+- @nestjs/swagger
 - typeorm
 - class-validators
 - class-transformer
 - pg
-
 ## Environment variables
 Create a .env file in the root of the project and add these properties with their respective values.
 
@@ -62,4 +62,10 @@ Finally we need to run the project
 npm run start
 or
 npm run start:dev
+```
+
+## Open API
+You can access swagger with this URL.
+```
+http://localhost:<your_port>/api
 ```
