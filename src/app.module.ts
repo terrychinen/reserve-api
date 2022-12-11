@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfigService } from './config/database-config.service';
+import { RequestModule } from './modules/request/request.module';
 
 @Module({
   imports: [
@@ -10,6 +11,7 @@ import { DatabaseConfigService } from './config/database-config.service';
       imports: [ConfigModule],
       useClass: DatabaseConfigService,
     }),
+    RequestModule,
   ],
   controllers: [],
   providers: [],
