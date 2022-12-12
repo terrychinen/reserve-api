@@ -13,7 +13,7 @@ export class SpaceService {
   ) {}
 
   async findAll(): Promise<Space[]> {
-    return this._spaceRepository.find();
+    return await this._spaceRepository.find();
   }
 
   async findOne(id: number): Promise<Space> {
