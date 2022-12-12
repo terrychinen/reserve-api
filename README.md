@@ -1,6 +1,6 @@
 # RESERVE API
 
-This is an example of a room reservation rest api built with NestJS.
+This is an example of a classroom reservation rest api built with NestJS.
 
 ## Installation
 Install dependencies with npm.
