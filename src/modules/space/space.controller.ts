@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   Delete,
   Get,
@@ -12,7 +13,7 @@ import { Space } from './entities/space.entity';
 import { CreateSpaceDto } from './dtos/create-space.dto';
 import { UpdateSpaceDto } from './dtos/update-space.dto';
 
-@Controller()
+@Controller('space')
 export class SpaceController {
   constructor(private readonly _spaceService: SpaceService) {}
 
@@ -27,14 +28,14 @@ export class SpaceController {
   }
 
   @Post()
-  async create(createSpaceDto: CreateSpaceDto): Promise<Space> {
+  async create(@Body() createSpaceDto: CreateSpaceDto): Promise<Space> {
     return this._spaceService.create(createSpaceDto);
   }
 
   @Put(':id')
   async update(
     @Param('id', ParseIntPipe) id: number,
-    updateSpaceDto: UpdateSpaceDto,
+    @Body() updateSpaceDto: UpdateSpaceDto,
   ) {
     return this._spaceService.update(id, updateSpaceDto);
   }
