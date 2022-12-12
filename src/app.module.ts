@@ -3,6 +3,8 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfigService } from './config/database-config.service';
 import { RequestModule } from './modules/request/request.module';
+import { ReserveModule } from './modules/reserve/reserve.module';
+import { SpaceModule } from './modules/space/space.module';
 
 @Module({
   imports: [
@@ -12,6 +14,8 @@ import { RequestModule } from './modules/request/request.module';
       useClass: DatabaseConfigService,
     }),
     RequestModule,
+    ReserveModule,
+    SpaceModule,
   ],
   controllers: [],
   providers: [],
