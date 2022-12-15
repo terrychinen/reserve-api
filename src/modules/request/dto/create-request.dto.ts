@@ -39,7 +39,7 @@ export class CreateRequestDto {
   day: string;
 
   @IsString()
-  starHour: string;
+  startHour: string;
 
   @IsString()
   endHour: string;
