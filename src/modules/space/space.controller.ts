@@ -7,15 +7,19 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { SpaceService } from './space.service';
 import { Space } from './entities/space.entity';
 import { CreateSpaceDto } from './dtos/create-space.dto';
 import { UpdateSpaceDto } from './dtos/update-space.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('space')
 @ApiTags('Space')
+@UseGuards(AuthGuard('jwt'))
+@ApiBearerAuth('access-token')
 export class SpaceController {
   constructor(private readonly _spaceService: SpaceService) {}
 

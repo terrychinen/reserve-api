@@ -7,15 +7,19 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { Request } from './entities/request.entity';
 import { RequestService } from './request.service';
 import { CreateRequestDto } from './dto/create-request.dto';
 import { UpdateRequestDto } from './dto/update-request.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('request')
 @ApiTags('Request')
+@UseGuards(AuthGuard('jwt'))
+@ApiBearerAuth('access-token')
 export class RequestController {
   constructor(private readonly _requestService: RequestService) {}
 

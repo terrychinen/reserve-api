@@ -7,15 +7,19 @@ import {
   ParseIntPipe,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import { Reserve } from './entities/reserve.entity';
 import { ReserveService } from './reserve.service';
 import { CreateReserveDto } from './dto/create-reserve.dto';
 import { UpdateReserveDto } from './dto/update-reserve.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiTags, ApiBearerAuth } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('reserve')
 @ApiTags('Reserve')
+@UseGuards(AuthGuard('jwt'))
+@ApiBearerAuth('access-token')
 export class ReserveController {
   constructor(private readonly _reserveService: ReserveService) {}
 
