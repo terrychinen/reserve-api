@@ -12,8 +12,10 @@ import { Request } from './entities/request.entity';
 import { RequestService } from './request.service';
 import { CreateRequestDto } from './dto/create-request.dto';
 import { UpdateRequestDto } from './dto/update-request.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('request')
+@ApiTags('Request')
 export class RequestController {
   constructor(private readonly _requestService: RequestService) {}
 

@@ -12,8 +12,10 @@ import { Reserve } from './entities/reserve.entity';
 import { ReserveService } from './reserve.service';
 import { CreateReserveDto } from './dto/create-reserve.dto';
 import { UpdateReserveDto } from './dto/update-reserve.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('reserve')
+@ApiTags('Reserve')
 export class ReserveController {
   constructor(private readonly _reserveService: ReserveService) {}
 
