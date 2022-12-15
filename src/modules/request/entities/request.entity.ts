@@ -49,7 +49,7 @@ export class Request {
 
   @ApiProperty({ example: '10' })
   @Column('text')
-  starHour: string;
+  startHour: string;
 
   @ApiProperty({ example: '12' })
   @Column('text')
