@@ -38,4 +38,9 @@ export class RequestService {
 
     return await this._requestRepository.save(updated);
   }
+
+  async remove(id: number): Promise<Request> {
+    const request = await this.findOne(id);
+    return await this._requestRepository.remove(request);
+  }
 }
