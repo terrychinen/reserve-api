@@ -4,21 +4,15 @@ import { RequestService } from './request.service';
 import { CreateRequestDto } from './dto/create-request.dto';
 import { UpdateRequestDto } from './dto/update-request.dto';
 import { RequestServiceMock } from './mocks/request-service.mock';
-import { Provider } from '@nestjs/common';
 
 describe('RequestController', () => {
   let controller: RequestController;
   let service: RequestService;
 
   beforeEach(async () => {
-    const RequestServiceProvider: Provider = {
-      provide: RequestService,
-      useClass: RequestServiceMock,
-    };
-
     const module: TestingModule = await Test.createTestingModule({
       controllers: [RequestController],
-      providers: [RequestService, RequestServiceProvider],
+      providers: [RequestService, RequestServiceMock],
     })
       .overrideProvider(RequestService)
       .useClass(RequestServiceMock)
