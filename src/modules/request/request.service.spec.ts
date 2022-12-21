@@ -9,6 +9,22 @@ import { RequestRepositoryMock } from './mocks/request-repository.mock';
 describe('RequestService', () => {
   let service: RequestService;
 
+  const request: Request = {
+    id: 1,
+    name: 'Carlos Torres',
+    position: 'Software engineer',
+    section: 'IT Area',
+    phone: '999888111',
+    email: 'carlos@test.com',
+    type: 'Developer',
+    activityName: 'Study Group',
+    startDate: new Date('2022-12-15'),
+    endDate: new Date('2022-12-18'),
+    day: 'Monday',
+    startHour: '5',
+    endHour: '9',
+  };
+
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
@@ -25,6 +41,15 @@ describe('RequestService', () => {
 
   it('should be defined', () => {
     expect(service).toBeDefined();
+  });
+
+  it('should find All requests', async () => {
+    expect(await service.findAll()).toEqual([request]);
+  });
+
+  it('should find a request', async () => {
+    const requestId = 1;
+    return expect(await service.findOne(requestId)).toEqual({ ...request });
   });
 
   it('should create a request', async () => {
@@ -71,5 +96,10 @@ describe('RequestService', () => {
       id: requestId,
       ...updateRequestDto,
     });
+  });
+
+  it('should remove a request', async () => {
+    const requestId = 1;
+    expect(await service.remove(requestId)).toEqual({ ...request });
   });
 });

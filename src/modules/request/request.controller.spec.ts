@@ -4,10 +4,27 @@ import { RequestService } from './request.service';
 import { CreateRequestDto } from './dto/create-request.dto';
 import { UpdateRequestDto } from './dto/update-request.dto';
 import { RequestServiceMock } from './mocks/request-service.mock';
+import { Request } from './entities/request.entity';
 
 describe('RequestController', () => {
   let controller: RequestController;
   let service: RequestService;
+
+  const request: Request = {
+    id: 1,
+    name: 'Carlos Torres',
+    position: 'Software engineer',
+    section: 'IT Area',
+    phone: '999888111',
+    email: 'carlos@test.com',
+    type: 'Developer',
+    activityName: 'Study Group',
+    startDate: new Date('2022-12-15'),
+    endDate: new Date('2022-12-18'),
+    day: 'Monday',
+    startHour: '5',
+    endHour: '9',
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -75,5 +92,19 @@ describe('RequestController', () => {
     controller.update(requestId, updateRequestDto);
 
     expect(updateSpy).toHaveBeenCalledWith(requestId, updateRequestDto);
+  });
+
+  it('should find a request', async () => {
+    const requestId = 2;
+    expect(await controller.findOne(requestId)).toEqual(request);
+  });
+
+  it('should return all requests', async () => {
+    expect(await controller.findAll()).toEqual([request]);
+  });
+
+  it('should remove a request', async () => {
+    const requestId = 2;
+    expect(await controller.remove(requestId)).toEqual({ ...request });
   });
 });
