@@ -64,6 +64,26 @@ or
 npm run start:dev
 ```
 
+## Test
+To run unit test in our classes, we need to run the following code.
+```sh
+npm run test
+or
+npm run test:watch
+```
+
+To run e2e test, we need to run the follogin code.
+```sh
+npm run e2e
+or
+npm run e2e:watch
+```
+
+To see our coverage of our project, we need to run the following code.
+```sh
+npm run test:cov
+```
+
 ## Open API
 You can access swagger with this URL.
 ```
