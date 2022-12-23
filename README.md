@@ -33,7 +33,7 @@ NEST_PORT=3000
 ```
 
 ## Docker
-Create a docker-compose file in the root of the project and add this properties with values
+Create a docker-compose file in the root of the project and add this properties with their values
 
 ```sh
 version: '3'
