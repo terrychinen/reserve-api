@@ -79,7 +79,7 @@ or
 npm run e2e:watch
 ```
 
-To see our coverage of our project, we need to run the following code.
+To see the coverage of our project, we need to run the following code.
 ```sh
 npm run test:cov
 ```
