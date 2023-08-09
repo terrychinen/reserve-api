@@ -33,7 +33,7 @@ NEST_PORT=3000
 ```
 
 ## Docker
-Create a docker-compose file in the root of the project and add this properties with values
+Create a docker-compose file in the root of the project and add this properties with their values
 
 ```sh
 version: '3'
@@ -62,6 +62,26 @@ Finally we need to run the project
 npm run start
 or
 npm run start:dev
+```
+
+## Test
+To run unit test in our classes, we need to run the following code.
+```sh
+npm run test
+or
+npm run test:watch
+```
+
+To run e2e test, we need to run the follogin code.
+```sh
+npm run e2e
+or
+npm run e2e:watch
+```
+
+To see the coverage of our project, we need to run the following code.
+```sh
+npm run test:cov
 ```
 
 ## Open API

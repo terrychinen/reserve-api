@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>reserve-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+        <link rel="stylesheet" href="./styles/Postmark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">reserve-api documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="reserve-api">RESERVE API</h1>
+<p>This is an example of a classroom reservation rest api built with NestJS.</p>
+<h2 id="installation">Installation</h2>
+<p>Install dependencies with npm.</p>
+<div><pre class="line-numbers"><code class="language-sh">npm install</code></pre></div><h2 id="libraries-used">Libraries used</h2>
+<ul>
+<li>@nestjs/config</li>
+<li>@nestjs/typeorm</li>
+<li>@nestjs/swagger</li>
+<li>typeorm</li>
+<li>class-validators</li>
+<li>class-transformer</li>
+<li>pg</li>
+</ul>
+<h2 id="environment-variables">Environment variables</h2>
+<p>Create a .env file in the root of the project and add these properties with their respective values.</p>
+<div><pre class="line-numbers"><code class="language-sh">DATABASE_TYPE=postgres
+DATABASE_HOST=localhost
+DATABASE_PORT=port
+DATABASE_NAME=reserve_db
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=password
+DATABASE_AUTOLOADENTITIES=true
+DATABASE_SYNCHRONIZE=true
+NEST_PORT=3000</code></pre></div><h2 id="docker">Docker</h2>
+<p>Create a docker-compose file in the root of the project and add this properties with their values</p>
+<div><pre class="line-numbers"><code class="language-sh">version: &#39;3&#39;
+  services:
+    db:
+      image: postgres:14.3
+      restart: always
+      ports:
+        - 5433:5432
+      environment:
+        POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+        POSTGRES_DB: ${DATABASE_NAME}
+      container_name: reservedb
+      volumes:
+        - ./postgres:/var/lib/postgresql/data</code></pre></div><h2 id="run">Run</h2>
+<p>To run the nestjs project, first we need to run the following code.</p>
+<div><pre class="line-numbers"><code class="language-sh">docker-compose up -d</code></pre></div><p>Finally we need to run the project</p>
+<div><pre class="line-numbers"><code class="language-sh">npm run start
+or
+npm run start:dev</code></pre></div><h2 id="test">Test</h2>
+<p>To run unit test in our classes, we need to run the following code.</p>
+<div><pre class="line-numbers"><code class="language-sh">npm run test
+or
+npm run test:watch</code></pre></div><p>To run e2e test, we need to run the follogin code.</p>
+<div><pre class="line-numbers"><code class="language-sh">npm run e2e
+or
+npm run e2e:watch</code></pre></div><p>To see the coverage of our project, we need to run the following code.</p>
+<div><pre class="line-numbers"><code class="language-sh">npm run test:cov</code></pre></div><h2 id="open-api">Open API</h2>
+<p>You can access swagger with this URL.</p>
+<div><pre class="line-numbers"><code class="language-none">http://localhost:&lt;your_port&gt;/api</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
